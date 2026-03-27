@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Reno Rajan Christy — Senior Data & AI Engineer</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f5f0eb;color:#2d3142;line-height:1.7}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(250,247,244,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid #ddd8d0;padding:0 40px;display:flex;justify-content:space-between;align-items:center;height:56px}
+.nav-logo{font-size:16px;font-weight:600;color:#3d5a80;letter-spacing:2px}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:13px;color:#6b7280;text-decoration:none;letter-spacing:0.4px;transition:color .2s}
+.nav-links a:hover{color:#3d5a80}
+.nav-cta{padding:7px 18px;background:#3d5a80;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:#2c4a6e}
+
+#hero{padding:72px 40px 56px;max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.hero-eyebrow{font-size:11px;letter-spacing:3px;color:#3d5a80;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+h1{font-size:36px;font-weight:600;color:#1a202c;line-height:1.15;margin-bottom:8px}
+.hero-sub{font-size:15px;color:#6b7280;max-width:500px;margin-bottom:14px;line-height:1.8}
+
+.competencies{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0}
+.comp-item{font-size:12px;color:#4b5563;padding:6px 10px;background:#fff;border:0.5px solid #ddd8d0;border-radius:6px;display:flex;align-items:center;gap:7px}
+.comp-item::before{content:'';width:5px;height:5px;border-radius:50%;background:#3d5a80;flex-shrink:0}
+
+.badge-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.badge{font-size:11px;padding:4px 11px;border-radius:20px;background:#e8e2f8;color:#4a3b8c;border:0.5px solid #c5bcef}
+.badge.teal{background:#e0f2ee;color:#0f6e56;border-color:#9fd8c8}
+
+.status-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.clearance{display:inline-flex;align-items:center;gap:7px;background:#e8f5ee;border:0.5px solid #86c9a8;border-radius:20px;padding:5px 14px;font-size:11px;color:#0f6e56;font-weight:500}
+.c2c{display:inline-flex;align-items:center;gap:7px;background:#eef2f8;border:0.5px solid #b3c2d8;border-radius:20px;padding:5px 14px;font-size:11px;color:#3d5a80;font-weight:500}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-green{background:#1d9e75;animation:pulse 2s infinite}
+.dot-blue{background:#3d5a80}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.btn-row{display:flex;gap:12px;margin-top:20px}
+.btn-primary{padding:10px 24px;background:#3d5a80;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:background .2s}
+.btn-primary:hover{background:#2c4a6e}
+.btn-outline{padding:10px 24px;background:transparent;color:#3d5a80;border:1.5px solid #3d5a80;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none;transition:all .2s}
+.btn-outline:hover{background:#3d5a80;color:#fff}
+
+.avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#3d5a80,#2c3e6b);border:4px solid #e2dcd4;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:600;color:#fff;flex-shrink:0;box-shadow:0 4px 24px rgba(61,90,128,.15)}
+
+section{padding:52px 40px;border-top:0.5px solid #ddd8d0;max-width:960px;margin:0 auto}
+.sec-label{font-size:10px;letter-spacing:3px;color:#3d5a80;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.sec-divider{width:32px;height:2px;background:#3d5a80;margin-bottom:22px;border-radius:2px}
+
+.about-text{font-size:15px;color:#4b5563;line-height:1.9;max-width:700px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.stat{background:#fff;border:0.5px solid #ddd8d0;border-radius:10px;padding:20px;text-align:center;transition:box-shadow .2s}
+.stat:hover{box-shadow:0 4px 16px rgba(61,90,128,.08)}
+.stat-num{font-size:28px;font-weight:600;color:#3d5a80}
+.stat-label{font-size:12px;color:#9ca3af;margin-top:4px}
+
+.exp-list{display:flex;flex-direction:column;gap:16px}
+.exp-card{background:#fff;border:0.5px solid #ddd8d0;border-left:3px solid #3d5a80;border-radius:0 10px 10px 0;padding:18px 20px;transition:box-shadow .2s}
+.exp-card:hover{box-shadow:0 4px 20px rgba(61,90,128,.08)}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:6px}
+.exp-role{font-size:15px;font-weight:600;color:#1a202c}
+.exp-date{font-size:11px;color:#3d5a80;background:#eef2f8;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.exp-company{font-size:13px;color:#6b7280;margin:5px 0 8px}
+.exp-desc{font-size:13px;color:#6b7280;line-height:1.75}
+.exp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.exp-tag{font-size:10px;padding:3px 8px;background:#f5f0eb;border:0.5px solid #ddd8d0;border-radius:10px;color:#6b7280}
+
+.skills-group{margin-bottom:22px}
+.skills-group-label{font-size:11px;color:#9ca3af;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.skill{font-size:12px;padding:6px 14px;border-radius:20px;background:#fff;border:0.5px solid #d1ccc5;color:#4b5563;transition:all .2s}
+.skill:hover{border-color:#3d5a80;color:#3d5a80}
+.skill.hot{background:#eef2f8;border-color:#b3c2d8;color:#3d5a80;font-weight:500}
+
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cert{background:#fff;border:0.5px solid #ddd8d0;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s}
+.cert:hover{box-shadow:0 4px 16px rgba(61,90,128,.08)}
+.cert-dot{width:9px;height:9px;border-radius:50%;background:#3d5a80;flex-shrink:0}
+.cert-name{font-size:12px;color:#4b5563;line-height:1.45}
+
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.edu-card{background:#fff;border:0.5px solid #ddd8d0;border-radius:10px;padding:18px 20px}
+.edu-deg{font-size:14px;font-weight:600;color:#1a202c;margin-bottom:4px}
+.edu-school{font-size:13px;color:#3d5a80;margin-bottom:4px}
+.edu-detail{font-size:12px;color:#9ca3af}
+
+.contact-intro{font-size:14px;color:#6b7280;margin-bottom:20px;max-width:480px;line-height:1.8}
+.contact-form{max-width:480px;display:flex;flex-direction:column;gap:10px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px 14px;border:0.5px solid #ddd8d0;border-radius:8px;font-size:13px;font-family:inherit;background:#fff;color:#2d3142;outline:none;transition:border .2s}
+.contact-form input:focus,.contact-form textarea:focus{border-color:#3d5a80}
+.contact-form textarea{height:110px;resize:none}
+.contact-form button{padding:11px;background:#3d5a80;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:background .2s}
+.contact-form button:hover{background:#2c4a6e}
+.contact-note{font-size:11px;color:#9ca3af;margin-top:8px}
+
+footer{text-align:center;padding:28px;border-top:0.5px solid #ddd8d0;font-size:12px;color:#9ca3af;background:#faf7f4}
+
+@media(max-width:680px){
+  #hero{grid-template-columns:1fr;text-align:center}
+  .avatar{margin:0 auto}
+  .badge-row,.btn-row,.status-row{justify-content:center}
+  .competencies,.stats,.edu-grid,.cert-grid{grid-template-columns:1fr}
+  nav .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">RRC</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+</nav>
+
+<div id="hero">
+  <div>
+    <div class="hero-eyebrow">Senior Data & AI Engineering Professional</div>
+    <h1>Reno Rajan Christy</h1>
+    <p class="hero-sub">14+ years engineering enterprise data & AI platforms across banking, cloud, risk, and intelligent automation.</p>
+    <div class="competencies">
+      <div class="comp-item">Enterprise Data Architecture</div>
+      <div class="comp-item">Data Modeling & Warehousing</div>
+      <div class="comp-item">Cloud Migration & Integration</div>
+      <div class="comp-item">Business Intelligence & Analytics</div>
+      <div class="comp-item">Banking Technology Management</div>
+      <div class="comp-item">Data Quality Assurance</div>
+      <div class="comp-item">AI & GenAI Platform Engineering</div>
+      <div class="comp-item">Risk & Decisioning Systems</div>
+    </div>
+    <div class="badge-row">
+      <span class="badge">Microsoft Fabric</span>
+      <span class="badge">Azure Synapse</span>
+      <span class="badge">Azure Databricks</span>
+      <span class="badge">Snowflake</span>
+      <span class="badge teal">Generative AI / LLM</span>
+      <span class="badge teal">Cloud Data Architecture</span>
+    </div>
+    <div class="status-row">
+      <div class="clearance"><span class="dot dot-green"></span>Public Trust Federal Security Clearance</div>
+      <div class="c2c"><span class="dot dot-blue"></span>Open to C2C Contracts</div>
+    </div>
+    <div class="btn-row">
+      <a href="#experience" class="btn-primary">View Experience</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+    </div>
+  </div>
+  <div class="avatar">RC</div>
+</div>
+
+<section id="about">
+  <div class="sec-label">About Me</div>
+  <div class="sec-divider"></div>
+  <p class="about-text">Senior Data & AI Engineering professional with deep expertise in Microsoft Fabric, Azure Databricks, and Snowflake — building Medallion architectures, real-time pipelines, and GenAI/LLM integrations (OCI GenAI, Azure OpenAI, RAG). Proven track record at Credit One Bank, U.S. Bank, and J.P. Morgan Chase across data engineering design, decisioning systems, and AI data platform solutioning. Strong AI data engineering, Python, PySpark, SAS, and SQL skills with hands-on Apache Airflow and enterprise data governance. MS in Management Information Systems (Data Science) from Oklahoma State University with a perfect 4.0 GPA.</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">14+</div><div class="stat-label">Years of experience</div></div>
+    <div class="stat"><div class="stat-num">4.0</div><div class="stat-label">MS GPA — Oklahoma State</div></div>
+    <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Professional certifications</div></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-label">Professional Experience</div>
+  <div class="sec-divider"></div>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <span class="exp-role">Sr Data Engineer — AcquityNode (Client: U.S. Bank)</span>
+        <span class="exp-date">Oct 2022 – Present</span>
+      </div>
+      <div class="exp-company">Minneapolis, MN · Public Trust Federal Clearance</div>
+      <div class="exp-desc">Architected end-to-end Microsoft Fabric Medallion architecture (Bronze/Silver/Gold) for real-time credit card authorizations across the bank's full card portfolio. Built Snowflake CDC pipelines using Snowpipe, Streams, and Tasks. Integrated OCI GenAI and Azure OpenAI into Python data pipelines. Delivered IoT edge-to-cloud solution achieving 95% infrastructure cost reduction. Enhanced high-availability enterprise solution integrating mainframe, IBM MQ, TIBCO, Kafka, and DB2 in a dockerized CI/CD environment.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">Microsoft Fabric</span><span class="exp-tag">Snowflake</span><span class="exp-tag">Azure Synapse</span><span class="exp-tag">OCI GenAI</span><span class="exp-tag">PySpark</span><span class="exp-tag">Kafka</span><span class="exp-tag">IoT Hub</span><span class="exp-tag">SAS</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <span class="exp-role">Sr Data Engineer — J.P. Morgan Chase (Quantitative Analytics)</span>
+        <span class="exp-date">Jan 2022 – Oct 2022</span>
+      </div>
+      <div class="exp-company">Seattle, WA</div>
+      <div class="exp-desc">Spearheaded Customer Journey Analytics platform migration from Bryter CX to Adobe CJA. Designed and implemented ETL feeds for IVR, ATM, Teller, Card, Survey, and Alert delivery channels on Teradata, Oracle, MySQL, and Hortonworks Hive. Automated data extraction via Python for Adobe API integration. Built IVR forecast volume prediction using SARIMA models in Python and PySpark.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">Adobe CJA</span><span class="exp-tag">Teradata</span><span class="exp-tag">Oracle</span><span class="exp-tag">Hive</span><span class="exp-tag">Python</span><span class="exp-tag">PySpark</span><span class="exp-tag">SARIMA</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <span class="exp-role">Data Engineer II — Credit One Bank</span>
+        <span class="exp-date">Aug 2019 – Jan 2022</span>
+      </div>
+      <div class="exp-company">Nevada, USA</div>
+      <div class="exp-desc">Managed complex RDBMS Data Lake-ODS ecosystem with 700+ stored procedures supporting $3 billion in annual decisioning. Delivered 180+ major data quality fixes across 3,600+ tables. Engineered 45 ETL solutions end-to-end for marketing campaign analytics. Developed Python automation for credit risk, fraud detection, and marketing segmentation. Supported Credit Line increase pipelines, applicant fraud flagging, and behavioral scoring.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">SQL</span><span class="exp-tag">SSIS</span><span class="exp-tag">SAS</span><span class="exp-tag">Python</span><span class="exp-tag">Tableau</span><span class="exp-tag">Data Governance</span><span class="exp-tag">Credit Risk</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <span class="exp-role">Assistant Manager IT & Specialist IT Officer — Canara (Syndicate) Bank</span>
+        <span class="exp-date">Jul 2014 – Oct 2016</span>
+      </div>
+      <div class="exp-company">India · Reserve Bank of India regulatory liaison</div>
+      <div class="exp-desc">Primary liaison for IT risk assurance and regulatory reporting to the Reserve Bank of India under the SPARC program. Led IT procurement of USD 70M per annum. Managed 7 ancillary app integrations to the Core Banking Solution including ISO 20022 financial messaging. Led process improvement delivering ~$2M in monetary benefit.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">Regulatory Reporting</span><span class="exp-tag">ISO 20022</span><span class="exp-tag">Core Banking</span><span class="exp-tag">IT Risk</span><span class="exp-tag">SQL</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <span class="exp-role">Software Engineering Analyst — Accenture</span>
+        <span class="exp-date">Jan 2013 – May 2014</span>
+      </div>
+      <div class="exp-company">India · Clients: KPN, Telus Canada</div>
+      <div class="exp-desc">Developed data warehouse reporting and QA solutions using SSIS, SSAS MDX, and SQL. Built end-to-end ETL flows from source to staging, data vault, data marts, and OBIEE reporting. Performed test planning, defect tracking, and incident reporting for IVR-CTI telecom projects.</div>
+      <div class="exp-tags">
+        <span class="exp-tag">SSIS</span><span class="exp-tag">SSAS</span><span class="exp-tag">MDX</span><span class="exp-tag">SQL</span><span class="exp-tag">ETL</span><span class="exp-tag">OBIEE</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-label">Skills & Expertise</div>
+  <div class="sec-divider"></div>
+
+  <div class="skills-group">
+    <div class="skills-group-label">Microsoft Fabric / Azure Synapse & Cloud Platforms</div>
+    <div class="skills-wrap">
+      <span class="skill hot">Microsoft Fabric</span>
+      <span class="skill hot">Azure Synapse Analytics</span>
+      <span class="skill hot">OneLake / Lakehouse</span>
+      <span class="skill hot">Azure Databricks</span>
+      <span class="skill hot">Azure Data Factory</span>
+      <span class="skill hot">Snowflake</span>
+      <span class="skill">AWS (S3, Glue, Athena, Redshift)</span>
+      <span class="skill">GCP BigQuery</span>
+      <span class="skill">Delta Lake</span>
+      <span class="skill">ADLS Gen2</span>
+      <span class="skill">Azure IoT Hub</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <div class="skills-group-label">Data Warehousing, Modelling & Architecture</div>
+    <div class="skills-wrap">
+      <span class="skill hot">Medallion Architecture (Bronze/Silver/Gold)</span>
+      <span class="skill hot">Dimensional Modelling</span>
+      <span class="skill hot">Star & Snowflake Schemas</span>
+      <span class="skill hot">ERD / Entity Relationship Design</span>
+      <span class="skill hot">Data Vault</span>
+      <span class="skill">3NF Normalization</span>
+      <span class="skill">SCD (Slowly Changing Dimensions)</span>
+      <span class="skill">ODS Design</span>
+      <span class="skill">Data Lakehouse</span>
+      <span class="skill">OLAP / OLTP</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <div class="skills-group-label">AI & Machine Learning</div>
+    <div class="skills-wrap">
+      <span class="skill hot">Generative AI / LLM</span>
+      <span class="skill hot">OCI GenAI</span>
+      <span class="skill hot">Azure OpenAI</span>
+      <span class="skill hot">RAG Pipelines</span>
+      <span class="skill hot">Vector Search / Embeddings</span>
+      <span class="skill">Spark ML</span>
+      <span class="skill">Feature Engineering</span>
+      <span class="skill">NLP</span>
+      <span class="skill">Logistic Regression</span>
+      <span class="skill">Random Forest</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <div class="skills-group-label">Programming & Databases</div>
+    <div class="skills-wrap">
+      <span class="skill hot">Python (PySpark, Pandas, PyArrow)</span>
+      <span class="skill hot">SQL / T-SQL / Proc SQL</span>
+      <span class="skill hot">SAS</span>
+      <span class="skill">Scala</span>
+      <span class="skill">R</span>
+      <span class="skill">Bash</span>
+      <span class="skill">Teradata</span>
+      <span class="skill">Oracle</span>
+      <span class="skill">DB2</span>
+      <span class="skill">MS SQL Server</span>
+      <span class="skill">Hive</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <div class="skills-group-label">Orchestration, DevOps & Governance</div>
+    <div class="skills-wrap">
+      <span class="skill hot">Apache Airflow</span>
+      <span class="skill hot">Data Governance</span>
+      <span class="skill hot">Data Quality & Validation</span>
+      <span class="skill">dbt Cloud</span>
+      <span class="skill">Azure DevOps</span>
+      <span class="skill">GitHub Actions</span>
+      <span class="skill">CI/CD</span>
+      <span class="skill">Docker</span>
+      <span class="skill">Prefect</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <div class="skills-group-label">Analytics & Visualization</div>
+    <div class="skills-wrap">
+      <span class="skill hot">Power BI</span>
+      <span class="skill">Tableau</span>
+      <span class="skill">Splunk</span>
+      <span class="skill">Grafana</span>
+      <span class="skill">Adobe Analytics</span>
+      <span class="skill">Streamlit</span>
+      <span class="skill">QlikView</span>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="sec-label">Professional Certifications</div>
+  <div class="sec-divider"></div>
+  <div class="cert-grid">
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">Oracle OCI Generative AI Professional 2025</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">Oracle OCI AI Associate</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">Microsoft Azure Data Engineer Associate DP-203</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">Microsoft Azure AI Fundamentals AI-900</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">Microsoft Azure Fundamentals AZ-900</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">Microsoft Data Fundamentals DP-900</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">AWS Certified Cloud Practitioner</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">Tableau Certified Desktop Specialist</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">SAS Certified Advanced SAS Programmer</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">SAS Certified Base SAS Programmer</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">CAIIB — Banking & Finance (IIBF)</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">JAIIB — Banking & Finance (IIBF)</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">ISTQB Certified Software Tester</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">DataCamp Python Data Analyst Career Track</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">edX: Analyzing & Visualizing Data — Power BI</div></div>
+    <div class="cert"><div class="cert-dot"></div><div class="cert-name">Udemy: Tableau A–Z</div></div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="sec-label">Education</div>
+  <div class="sec-divider"></div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-deg">Master of Science — Management Information Systems</div>
+      <div class="edu-school">Oklahoma State University, Stillwater, Oklahoma</div>
+      <div class="edu-detail">Data Science focus · GPA 4.0 / 4.0 · May 2019</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-deg">Bachelor of Technology — Electronics & Communication Engineering</div>
+      <div class="edu-school">Mahatma Gandhi University, Kerala, India</div>
+      <div class="edu-detail">Distinction graduate · GPA 3.81 / 4.0 · May 2012</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-label">Get In Touch</div>
+  <div class="sec-divider"></div>
+  <p class="contact-intro">Open to new opportunities, collaborations, and C2C consulting engagements. Fill in the form and I'll get back to you promptly.</p>
+  <!-- FORMSPREE: replace YOUR_FORM_ID below with your Formspree form ID e.g. xpzvwqkr -->
+  <form class="contact-form" action="https://formspree.io/f/mojpvnyl" method="POST">
+    <input type="text" name="name" placeholder="Your name" required/>
+    <input type="email" name="email" placeholder="Your email" required/>
+    <input type="text" name="subject" placeholder="Subject"/>
+    <textarea name="message" placeholder="Your message" style="height:110px" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p class="contact-note">Based in Minneapolis, MN · Open to remote & C2C engagements</p>
+</section>
+
+<footer>
+  © 2026 Reno Rajan Christy · Senior Data & AI Engineering Professional · Minneapolis, MN
+</footer>
+
+</body>
+</html>
