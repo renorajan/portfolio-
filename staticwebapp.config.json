@@ -23,5 +23,14 @@
     ".json": "application/json",
     ".jpg": "image/jpeg",
     ".png": "image/png"
-  }
+  },
+  "routes": [
+    {
+      "route": "/assets/RenoChristy_AIDataEngineer.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "Content-Disposition": "attachment; filename=RenoChristy_AIDataEngineer.pdf"
+      }
+    }
+  ]
 }
